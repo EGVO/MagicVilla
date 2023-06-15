@@ -9,9 +9,9 @@ namespace MagicVilla_API.Models.Dto
 
         [Required]
         [MaxLength(30)]
-        public string Name { get; set; }
+        public required string Name { get; set; }
 
-        public string Detail { get; set; }
+        public string? Detail { get; set; }
         
         [Required]
         public double Rate { get; set; }
@@ -23,8 +23,8 @@ namespace MagicVilla_API.Models.Dto
         public int SquareMeter { get; set; }
         
         [Required]
-        public string UrlImage { get; set; }
+        public string? UrlImage { get; set; }
         
-        public string Amenity { get; set; }
+        public string? Amenity { get; set; }
     }
 }
