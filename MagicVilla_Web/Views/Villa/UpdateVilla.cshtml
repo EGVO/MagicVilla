@@ -1,0 +1,84 @@
+﻿@model MagicVilla_Web.Models.Dto.VillaUpdateDto
+
+@{
+    ViewData["Title"] = "UpdateVilla";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form method="post" asp-action="UpdateVilla">
+    <div class="container border p-3">
+
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <input hidden asp-for="Id" />
+
+        <div class="row">
+            <h2 class="text-info">Actualizar Villa</h2>
+        </div>
+
+        <div class="row mt-2">
+            <div class="col-md-6">
+                <label class="form-label">Nombre de la Villa</label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="row mt-2">
+            <div class="col-md-6">
+                <label class="form-label">Tarifa</label>
+                <input asp-for="Rate" class="form-control" />
+                <span asp-validation-for="Rate" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="row mt-2">
+            <div class="col-md-6">
+                <label class="form-label">Detalle</label>
+                <textarea asp-for="Detail" class="form-control"></textarea>
+                <span asp-validation-for="Detail" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="row mt-2">
+            <div class="col-md-6">
+                <label class="form-label">Imagen</label>
+                <input asp-for="UrlImage" class="form-control" />
+                <span asp-validation-for="UrlImage" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="row mt-2">
+            <div class="col-md-6">
+                <label class="form-label">Ocupantes</label>
+                <input asp-for="Occupants" class="form-control" />
+                <span asp-validation-for="Occupants" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="row mt-2">
+            <div class="col-md-6">
+                <label class="form-label">Metros Cuadrados</label>
+                <input asp-for="SquareMeter" class="form-control" />
+                <span asp-validation-for="SquareMeter" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="row mt-2">
+            <div class="col-md-6">
+                <label class="form-label">Amenidad</label>
+                <textarea asp-for="Amenity" class="form-control"></textarea>
+                <span asp-validation-for="Amenity" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="d-grid gap-2 d-md-block mt-2">
+            <button type="submit" class="btn btn-primary">Actualizar</button>
+            <a asp-controller="Villa" asp-action="IndexVilla" class="btn btn-success">Regresar</a>
+        </div>
+    </div>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

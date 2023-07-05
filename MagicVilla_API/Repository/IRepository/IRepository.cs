@@ -6,9 +6,9 @@ namespace MagicVilla_API.Repository.IRepository
     {
         Task Create(T entity);
 
-        Task<List<T>> GetAll(Expression<Func<T, bool>>? filter = null);
+        Task<List<T>> GetAll(Expression<Func<T, bool>>? filter = null, string? IncludeProperties = null);
 
-        Task<T> Get(Expression<Func<T, bool>>? filter = null, bool tracked = true);
+        Task<T> Get(Expression<Func<T, bool>>? filter = null, bool tracked = true, string? IncludeProperties = null);
 
         Task Delete(T entity);
 

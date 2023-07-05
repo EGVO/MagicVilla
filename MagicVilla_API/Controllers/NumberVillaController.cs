@@ -2,7 +2,6 @@
 using MagicVilla_API.Models;
 using MagicVilla_API.Models.Dto;
 using MagicVilla_API.Repository.IRepository;
-using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
 
@@ -35,7 +34,7 @@ namespace MagicVilla_API.Controllers
             {
                 _logger.LogInformation("Obtener Números de Villas");
 
-                IEnumerable<NumberVilla> numberVillaList = await _numberRepo.GetAll();
+                IEnumerable<NumberVilla> numberVillaList = await _numberRepo.GetAll(IncludeProperties : "Villa");
 
                 _response.Result = _mapper.Map<IEnumerable<NumberVillaDto>>(numberVillaList);
                 _response.StatusCode = HttpStatusCode.OK;
@@ -68,7 +67,7 @@ namespace MagicVilla_API.Controllers
                     return BadRequest(_response);
                 }
 
-                var numberVilla = await _numberRepo.Get(v => v.VillaNo.Equals(id));
+                var numberVilla = await _numberRepo.Get(v => v.VillaNo.Equals(id), IncludeProperties : "Villa");
             
                 if (numberVilla == null)
                 {
@@ -106,13 +105,13 @@ namespace MagicVilla_API.Controllers
                 }
                 if (await _numberRepo.Get(v => v.VillaNo.Equals(createDto.VillaNo)) != null)
                 {
-                    ModelState.AddModelError("NombreExiste", "El número de Villa ya existe");
+                    ModelState.AddModelError("ErrorMessages", "El número de Villa ya existe");
                     return BadRequest(ModelState);
                 }
 
                 if (await _villaRepo.Get(v => v.Id.Equals(createDto.VillaId)) == null)
                 {
-                    ModelState.AddModelError("ForeingKey", "El Id de la Villa no existe");
+                    ModelState.AddModelError("ErrorMessages", "El Id de la Villa no existe");
                     return BadRequest(ModelState);
                 }
 
@@ -197,7 +196,7 @@ namespace MagicVilla_API.Controllers
 
                 if (await _villaRepo.Get(v => v.Id.Equals(updateDto.VillaId)) == null)
                 {
-                    ModelState.AddModelError("ForeingKey", "El Id de la Villa no existe");
+                    ModelState.AddModelError("ErrorMessages", "El Id de la Villa no existe");
                     return BadRequest(ModelState);
                 }
 

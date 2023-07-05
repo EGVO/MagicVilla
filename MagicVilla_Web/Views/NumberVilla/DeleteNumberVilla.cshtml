@@ -1,0 +1,48 @@
+﻿@model MagicVilla_Web.Models.ViewModel.NumberVillaDeleteViewModel
+
+@{
+    ViewData["Title"] = "DeleteNumberVilla";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form methop="post" asp-action="DeleteNumberVilla">
+    <div class="container border p-3">
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <input asp-for="NumberVilla.VillaNo" hidden />
+
+        <div class="row">
+            <h2 class="text-info">Eliminar Número de Villa</h2>
+        </div>
+
+        <div class="rwo mt-2">
+            <div class="col-md-6">
+                <label class="form-label">Número de Villa</label>
+                <input asp-for="NumberVilla.VillaNo" disabled class="form-control" />
+                <span asp-validation-for="NumberVilla.VillaNo" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="row-mt-2">
+            <div class="col-md-6">
+                <label class="form-label">Villa</label>
+                <select asp-for="NumberVilla.VillaId" disabled class="form-select" asp-items="@Model.VillaList">
+                    <option value="">-- Selecciones una Villa --</option>
+                </select>
+                <span asp-validation-for="NumberVilla.VillaId" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="row-mt-2">
+            <div class="col-md-6">
+                <label class="form-label">Detalle Especial</label>
+                <textarea asp-for="NumberVilla.EspecialDetail" disabled class="form-control"></textarea>
+                <span asp-validation-for="NumberVilla.EspecialDetail" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="d-grid gap-2 d-md-block mt-2">
+            <button type="submit" class="btn btn-danger">Eliminar</button>
+            <a asp-controller="NumberVilla" asp-action="IndexNumberVilla" class="btn btn-success">Regresar</a>
+        </div>
+    </div>
+</form>

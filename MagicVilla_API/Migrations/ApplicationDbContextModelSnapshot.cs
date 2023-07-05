@@ -91,26 +91,26 @@ namespace MagicVilla_API.Migrations
                         {
                             Id = 1,
                             Amenity = "",
-                            CreationDate = new DateTime(2023, 6, 14, 18, 38, 36, 911, DateTimeKind.Local).AddTicks(6742),
+                            CreationDate = new DateTime(2023, 6, 20, 8, 37, 18, 974, DateTimeKind.Local).AddTicks(6166),
                             Detail = "Detalle de la Villa...",
                             Name = "Villa Real",
                             Occupants = 5,
                             Rate = 200.0,
                             SquareMeter = 50,
-                            UpdateDate = new DateTime(2023, 6, 14, 18, 38, 36, 911, DateTimeKind.Local).AddTicks(6766),
+                            UpdateDate = new DateTime(2023, 6, 20, 8, 37, 18, 974, DateTimeKind.Local).AddTicks(6185),
                             UrlImage = ""
                         },
                         new
                         {
                             Id = 2,
                             Amenity = "",
-                            CreationDate = new DateTime(2023, 6, 14, 18, 38, 36, 911, DateTimeKind.Local).AddTicks(6773),
+                            CreationDate = new DateTime(2023, 6, 20, 8, 37, 18, 974, DateTimeKind.Local).AddTicks(6188),
                             Detail = "Detalle de la Villa...",
                             Name = "Premium Vista a la Piscina",
                             Occupants = 4,
                             Rate = 150.0,
                             SquareMeter = 40,
-                            UpdateDate = new DateTime(2023, 6, 14, 18, 38, 36, 911, DateTimeKind.Local).AddTicks(6775),
+                            UpdateDate = new DateTime(2023, 6, 20, 8, 37, 18, 974, DateTimeKind.Local).AddTicks(6189),
                             UrlImage = ""
                         });
                 });
