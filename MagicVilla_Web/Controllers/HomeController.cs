@@ -2,6 +2,7 @@
 using MagicVilla_utility;
 using MagicVilla_Web.Models;
 using MagicVilla_Web.Models.Dto;
+using MagicVilla_Web.Models.ViewModel;
 using MagicVilla_Web.Services.IServices;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
@@ -22,18 +23,30 @@ namespace MagicVilla_Web.Controllers
             _mapper = mapper;
         }
 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int pageNumber)
         {
             List<VillaDto> villaList = new();
+            VillaPagedViewModel villaVM = new VillaPagedViewModel();
 
-            var response = await _villaService.GetAll<APIResponse>(HttpContext.Session.GetString(SD.SessionToken));
+            if (pageNumber < 1) pageNumber = 1;
+
+            var response = await _villaService.GetAllPaged<APIResponse>(HttpContext.Session.GetString(SD.SessionToken), pageNumber);
 
             if (response != null && response.IsSuccessful) 
             {
                 villaList = JsonConvert.DeserializeObject<List<VillaDto>>(Convert.ToString(response.Result));
+                villaVM = new VillaPagedViewModel()
+                {
+                    VillaList = villaList,
+                    PageNumber = pageNumber,
+                    TotalPages = JsonConvert.DeserializeObject<int>(Convert.ToString(response.TotalPages))
+                };
+
+                if (pageNumber > 1) villaVM.Previous = "";
+                if (villaVM.TotalPages <= pageNumber) villaVM.Next = "disabled";
             }
 
-            return View(villaList);
+            return View(villaVM);
         }
 
         public IActionResult Privacy()

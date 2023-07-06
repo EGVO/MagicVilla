@@ -14,8 +14,10 @@ namespace MagicVilla_API.Models
 
         public bool IsSuccessful { get; set; } = true;
 
-        public List<string>? ErrorMessages { get; set; }
+        public List<string> ErrorMessages { get; set; }
 
-        public object? Result { get; set; }
+        public object Result { get; set; }
+
+        public int TotalPages { get; set; }
     }
 }

@@ -5,6 +5,8 @@ namespace MagicVilla_Web.Services.IServices
     public interface IVillaService
     {
         Task<T> GetAll<T>(string token);
+        
+        Task<T> GetAllPaged<T>(string token, int pageNumber = 1, int pageSize = 4);
 
         Task<T> Get<T>(int id, string token);
 
