@@ -6,8 +6,9 @@ using System.Net;
 
 namespace MagicVilla_API.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/v{version:apiVersion}/[controller]")]
     [ApiController]
+    [ApiVersionNeutral]
     public class UserController : ControllerBase
     {
         private readonly IUserRepository _userRepo;
@@ -23,7 +24,7 @@ namespace MagicVilla_API.Controllers
         public async Task<IActionResult> Login([FromBody] LoginRequestDTO model)
         {
             var loginResponse = await _userRepo.Login(model);
-            if (loginResponse.User == null || string.IsNullOrEmpty(loginResponse.Token)) 
+            if (loginResponse.User == null || string.IsNullOrEmpty(loginResponse.Token))
             {
                 _response.StatusCode = HttpStatusCode.BadRequest;
                 _response.IsSuccessful = false;
@@ -43,7 +44,7 @@ namespace MagicVilla_API.Controllers
         {
             bool isSingleUser = _userRepo.IsSingleUser(model.UserName);
 
-            if (!isSingleUser) 
+            if (!isSingleUser)
             {
                 _response.StatusCode = HttpStatusCode.BadRequest;
                 _response.IsSuccessful = false;
@@ -52,7 +53,7 @@ namespace MagicVilla_API.Controllers
                 return BadRequest(_response);
             }
             var user = await _userRepo.Register(model);
-            if (user == null) 
+            if (user == null)
             {
                 _response.StatusCode = HttpStatusCode.BadRequest;
                 _response.IsSuccessful = false;
@@ -60,7 +61,7 @@ namespace MagicVilla_API.Controllers
 
                 return BadRequest(_response);
             }
-            _response.StatusCode= HttpStatusCode.OK;
+            _response.StatusCode = HttpStatusCode.OK;
             _response.IsSuccessful = true;
 
             return Ok(_response);

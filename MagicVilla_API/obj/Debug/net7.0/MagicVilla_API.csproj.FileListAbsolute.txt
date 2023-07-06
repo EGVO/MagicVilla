@@ -81,3 +81,5 @@ C:\Proyectos\Courses\API\MagicVilla\MagicVilla_API\obj\Debug\net7.0\MagicVilla_A
 C:\Proyectos\Courses\API\MagicVilla\MagicVilla_API\obj\Debug\net7.0\MagicVilla_API.genruntimeconfig.cache
 C:\Proyectos\Courses\API\MagicVilla\MagicVilla_API\obj\Debug\net7.0\ref\MagicVilla_API.dll
 C:\Proyectos\Courses\API\MagicVilla\MagicVilla_API\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Proyectos\Courses\API\MagicVilla\MagicVilla_API\bin\Debug\net7.0\Microsoft.AspNetCore.Mvc.Versioning.dll
+C:\Proyectos\Courses\API\MagicVilla\MagicVilla_API\bin\Debug\net7.0\Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer.dll
