@@ -225,3 +225,8 @@ C:\Proyectos\Courses\API\MagicVilla\MagicVilla_Web\obj\Debug\net7.0\refint\Magic
 C:\Proyectos\Courses\API\MagicVilla\MagicVilla_Web\obj\Debug\net7.0\MagicVilla_Web.pdb
 C:\Proyectos\Courses\API\MagicVilla\MagicVilla_Web\obj\Debug\net7.0\MagicVilla_Web.genruntimeconfig.cache
 C:\Proyectos\Courses\API\MagicVilla\MagicVilla_Web\obj\Debug\net7.0\ref\MagicVilla_Web.dll
+C:\Proyectos\Courses\API\MagicVilla\MagicVilla_Web\bin\Debug\net7.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Proyectos\Courses\API\MagicVilla\MagicVilla_Web\bin\Debug\net7.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Proyectos\Courses\API\MagicVilla\MagicVilla_Web\bin\Debug\net7.0\Microsoft.IdentityModel.Logging.dll
+C:\Proyectos\Courses\API\MagicVilla\MagicVilla_Web\bin\Debug\net7.0\Microsoft.IdentityModel.Tokens.dll
+C:\Proyectos\Courses\API\MagicVilla\MagicVilla_Web\bin\Debug\net7.0\System.IdentityModel.Tokens.Jwt.dll

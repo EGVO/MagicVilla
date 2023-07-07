@@ -59,6 +59,10 @@
               "target": "Package",
               "version": "[7.0.8, )"
             },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.8, )"
+            },
             "Microsoft.AspNetCore.JsonPatch": {
               "target": "Package",
               "version": "[7.0.7, )"
@@ -81,13 +85,13 @@
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[7.0.7, )"
+              "version": "[7.0.8, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[7.0.7, )"
+              "version": "[7.0.8, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
